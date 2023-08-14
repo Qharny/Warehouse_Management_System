@@ -188,7 +188,7 @@
                             // insert into database 
                             $data = "INSERT INTO signup (Firstname, Lastname, Username, Email, Password, Confirmed_Password) VALUES ('$fname', '$lname', '$userName', '$mail', '$password', '$confirm_password')";
                             mysqli_query($connection, $data);
-                            echo "<script> alert('Registered successfully');window.location(../dashboard.php); </script>";
+                            echo "<script> alert('Registered successfully');window.location='Userdashboard.php'; </script>";
                         }
                         else{
                             echo "<script> alert('Password does not Match'); </script>";

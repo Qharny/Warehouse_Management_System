@@ -138,8 +138,8 @@
                     <input type="text" name="lastname" id="lastname" placeholder="Last Name" >
                 </div>
                 <br>
-                <input type="text" name="Username" id="Username" placeholder="Username" required><br>
-                <input type="text" name="Email" id="Email" placeholder="Email: Name@gmail.com" required><br>
+                <input type="text" name="username" id="Username" placeholder="Username" required><br>
+                <input type="text" name="email" id="Email" placeholder="Email: Name@gmail.com" required><br>
                 
                 <div class="pass">
                     <input type="password" name="password" id="pass" placeholder="Password" required><br>
@@ -148,11 +148,60 @@
 
                 
                 <div class="btn">
-                    <button type="submit" name="submit">Sign Up</button>
+                    <button type="submit" name="signup">Sign Up</button>
                 </div>
-                <div class="link"><a href="#">Login as Admin</a></div>
-
             </form>
+            <?php
+
+                $host_name = "localhost";
+                $user_name = "root";
+                $password = "";
+                $db_name = "Warehouse_Management_System";
+
+                $connection = mysqli_connect($host_name, $user_name, $password, $db_name);
+
+                // Check if the 'signup' form has been submitted
+                if(isset($_POST['signup'])){
+                    // Sanitize and escape user input
+
+                    $fname = $_POST['firstname'];
+                    $lname = $_POST['lastname'];
+                    $userName = $_POST['username'];
+                    $mail  = $_POST['email'];
+                    $password = $_POST['password'];
+                    $confirm_password = $_POST['Confirmpassword'];
+
+                    // SQL query to check if the username or email already exists
+                    $check_usename = "SELECT * FROM signup WHERE Username = '$userName' OR Email = '$mail'";
+
+
+                    // Execute the query
+                    $query = mysqli_query($connection, $check_usename);
+
+                    // Check if a matching username or email is found in the database
+                    if(mysqli_num_rows($query) > 0){
+                        echo "<script> alert('Username or Email has already been taken'); </script>";
+                    }
+                    else{
+                        // check if the entered password match
+                        if($password == $confirm_password){
+                            // insert into database 
+                            $data = "INSERT INTO signup (Firstname, Lastname, Username, Email, Password, Confirmed_Password) VALUES ('$fname', '$lname', '$userName', '$mail', '$password', '$confirm_password')";
+                            mysqli_query($connection, $data);
+                            echo "<script> alert('Registered successfully');window.location(../dashboard.php); </script>";
+                        }
+                        else{
+                            echo "<script> alert('Password does not Match'); </script>";
+                        };
+                    };
+
+
+                }
+
+
+
+
+            ?>
 
         </div>
             

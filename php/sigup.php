@@ -1,6 +1,13 @@
 <?php
 
-    require "connection.php";
+    session_start();
+
+    $host_name = "localhost";
+    $user_name = "root";
+    $password = "";
+    $db_name = "Warehouse_Management_System";
+
+    $connection = mysqli_connect($host_name, $user_name, $password, $db_name);
 
     // Check if the 'signup' form has been submitted
     if(isset($_POST['signup'])){
@@ -20,7 +27,7 @@
         $query = mysqli_query($connection, $check_usename);
 
         // Check if a matching username or email is found in the database
-        if(mysqli_num_rows($check) > 0){
+        if(mysqli_num_rows($query) > 0){
             echo "<script> alert('Username or Email has already been taken'); </script>";
         }
         else{

@@ -1,190 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 
-    <title>Dashboard - NiceAdmin Bootstrap Template</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
-
-    <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.gstatic.com" rel="preconnect">
-    <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-        rel="stylesheet">
-
-    <!-- Vendor CSS Files -->
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
-    <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
-
-    <!-- Template Main CSS File -->
-    <link href="assets/css/style.css" rel="stylesheet">
-
-    <!-- =======================================================
-  * Name: Group 4a
-  * Updated: Jul 27 2023 with Bootstrap v5.3.1
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Author: Group 4a
-  * License: https://bootstrapmade.com/license/
-======================================================== -->
-<style>
-    *{
-        padding: 0;
-        margin: 0;
-    }
-    html, body{
-        width: 100% !important;
-        height: 100% !important;
-    }
-    .contain{
-        display: flex;
-        flex-direction: row;
-    }
-    .cards{
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-    }
-    .card1{
-        width: 263px;
-        height: 126px;
-        background: white; 
-        box-shadow: 0px 4px 50px 2px rgba(0, 0, 0, 0.07); 
-        border-radius: 0px 0px 14px 14px;
-        border-top: 8px solid #244DE0;
-        text-decoration: none;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .card1 h3 a {
-        font-size: 20px;
-    }
-    main{
-        height: 100% !important;
-        width: 100% !important;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    iframe{
-        width: inherit;
-        height: 95%;
-    }
-</style>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+        }
+        html, body{
+            width: 100%;
+            height: 100%;
+            background: #FBFBFB;
+            scroll-behavior: smooth;
+            transition: all 0.3s;
+        }
+        header{
+            height: 50px;
+            color:  #fff;
+            background: #173292;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            font-size: 17px;
+            font-weight: 800;
+        }
+        header .logo{
+            font-size: 25px;
+        }
+        header ul{
+            margin-right: 20px;
+        }
+        header ul li{
+            display: inline;
+            list-style: none;
+            margin: 0 10px;
+        }
+        header ul li a{
+            text-decoration: none;
+            color: #fff;
+            text-transform: uppercase;
+        }
+        header ul li a:hover{
+            text-decoration: underline;
+            color: #fff;
+            transition: 0.3s ease-in-out;
+        }
+        .hero{
+            color: #fff;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to right, #244de06f, #476cef), url(bg.jpg);
+            background-size: cover;
+        }
+        .hero h1{
+            font-size: 60px;
+            
+        }
+        .hero .text{
+            margin: 0 350px;
+        }
+        .hero button{
+            width: 120px; 
+            height: 35px; 
+            padding-left: 20px; 
+            border: none;
+            padding-right: 20px; 
+            padding-top: 12px; 
+            padding-bottom: 12px; 
+            background: #fff;
+            border-radius: 30px; 
+            justify-content: center; 
+            align-items: center; 
+            gap: 10px; 
+            display: inline-flex;
+            color: #244DE0;
+            margin-bottom: 20px;
+            margin: 20px 5px;
+        }
+        .hero button:hover{
+            background:#bbc6eb;
+            color: #fff;
+        }
+        .about{
+            height: auto;
+            padding: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            align-items: center;
+        }
+        .desp{
+            flex: 0.5;
+            padding: 40px 80px 40px 40px;
+        }
+        p{
+            text-align: justify;
+        }
+        .img{
+            flex: 0.5;
+        }
+        img{
+            border-radius: 80px 0 80px 0;
+            box-shadow: 0px 4px 50px 2px rgba(0, 0, 0, 0.07);
+        }
+        footer{
+            background: #173292;
+            color: #fff;
+            height: 70px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            bottom: 0;
+        }
+        footer li{
+            display: inline;
+            list-style: none;
+        }
+        footer li a{
+            margin: 10px;
+            color: #fff;
+            font-size: 25px;
+            transition: all ease-in-out 0.3s ;
+        }
+        footer li a:hover{
+            transform: scale(1.1) translateY(-1px);
+            cursor: pointer;
+        }
+    </style>
 </head>
-
 <body>
-
-    <!-- ======= Header ======= -->
-    <header id="header" class="header fixed-top d-flex align-items-center">
-
-        <div class="d-flex align-items-center justify-content-between">
-            <a href="index.php" class="logo d-flex align-items-center">
-                <img src="assets/img/logo.png" alt="">
-                <span class="d-none d-lg-block">Group_4a</span>
-            </a>
-            <i class="bi bi-list toggle-sidebar-btn"></i>
-        </div><!-- End Logo -->
-
-    </header><!-- End Header -->
-
-    <aside id="sidebar" class="sidebar" style="flex: 0.15;">
-
-        <ul class="sidebar-nav" id="sidebar-nav">
-
-            <li class="nav-item">
-                <a class="nav-link " href="dashboard.php" target="pageFrame">
-                    <i class="bi bi-grid"></i>
-                    <span>Dashboard</span>
-                </a>
-            </li><!-- End Dashboard Nav -->
-
-            <li class="nav-item">
-                <a class="nav-link collased" data-bs-target="#forms-nav" data-bs-toggle="collapse" aria-controls="forms-nav" id="toggle"href="#">
-                    <i class="bi bi-people"></i><span>Users</span><i class="bi bi-chevron-down ms-auto" id="tooggle"></i>
-                </a>
-                <ul id="forms-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
-                    <li>
-                        <a href="user.php"   target="pageFrame">
-                            <i class="bi bi-circle"></i><span>All Users</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="forms-layouts.php" class="active" target="pageFrame">
-                            <i class="bi bi-circle"></i><span>Pending Approval</span>
-                        </a>
-                    </li>
+    <div class="wrapper">
+        <header>
+            <div class="logo">4a</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">HOME</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#contact">contact</a></li>
+                    
                 </ul>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="category.php" target="pageFrame">
-                    <i class="bi bi-bookmark-plus"></i></i><span>Categories</span>
-                </a>
-
-            </li><!-- End Forms Nav -->
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="pages/product.php" target="pageFrame">
-                    <i class="bi bi-journal-text"></i><span>Products</span>
-                </a>
-
-            </li><!-- End Forms Nav -->
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="pages/sales/sales.php" target="pageFrame">
-                    <i class="bi bi-layout-text-window-reverse"></i><span>Sales</span>
-                </a>
-            </li><!-- End Tables Nav -->
-
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="salesReport.php" target="pageFrame">
-                    <i class="bi bi-bar-chart"></i><span>Sales Reort</span>
-                </a>
-            </li><!-- End Icons Nav -->
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="login.php" target="pageFrame">
-                    <i class="bi bi-box-arrow-in-right"></i>
-                    <span>Logout</span>
-                </a>
-            </li><!-- End Login Page Nav -->
-        </ul>
-
-    </aside><!-- End Sidebar-->
-    <main>
-        <iframe src="dashboard.php" name="pageFrame" frameborder="0"></iframe>
-    </main>
-
-    <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
-    <!-- <script>
-        const toggleBtn = document.getElementById('toggle');
-        const content = document.getElementById('forms-nav');
-
-        toggleBtn.addEventListener('click', ()=> {
-            if(content.style.display === 'none'){  //if the nav is hidden, show it and change text to hide
-        }
-        else{
-            //otherwise, hide it and change text back to show
-            content.style.display='block';
-        }
-        }
-
-        )
-    </script> -->
+            </nav>
+        </header>
+    </div>
+    <section class="hero" id="home">
+        <h1>MANAGE YOUR WAREHOUSE </h1>
+        <div class="text">
+            Efficiently Managing Your Warehouse Operations
+        </div>
+        <div class="btn">
+            <a href="Signup.php"><button type="button">Get Started</button></a>
+            <a href="login.php"><button type="button">Login</button></a>
+        </div>
+    </section>
+    <section class="about" id="about">
+        <div class="desp">
+            <h1>KNOW US</h1>
+            <p>
+                Our Inventory Management System revolutionizes the way businesses handle their inventory. Seamlessly integrating
+                cutting-edge technology with intuitive user interfaces, our system empowers organizations to optimize their inventory
+                control and streamline operations. From real-time tracking of stock levels to efficient order processing, our solution
+                ensures accuracy and reduces wastage. With data-driven insights, businesses can make informed decisions, prevent
+                stockouts, and minimize excess stock, leading to improved financial health. Experience the future of inventory
+                management with our comprehensive and reliable system that maximizes efficiency and enhances overall productivity.
+            </p>
+        </div>
+        <div class="img">
+            <img src="warehouse.png" alt="4a" width="500">
+        </div>
+    </section>
+    <section class="contanct" id="contact">
+        <form action="#" method="post">
+            <table>
+                <tr>
+                    <td><label for="name">NAME: </label></td>
+                    <td><input type="text" name="name" id="name" placeholder="Enter your name"></td>
+                </tr>
+                <tr>
+                    <td><label for="message">MESSAGE: </label></td>
+                    <td><textarea name="area" id="tarea" cols="30" rows="6" placeholder="Enter your Message"></textarea></td>
+                </tr>
+                <tr>
+                    <td><button type="submit">Send</button></td>
+                </tr>
+            </table>
+        </form>
+    </section>
+    <footer>
+        <div class="foot">Copyright &copy; 2023 || All Rights Reserved by Group 4a Pvt Ltd.</div>
+        <div class="social">
+            <ul>
+                <li><a href="" title="+233 25 764 5744"><i class="fab fa-whatsapp"></i></a></li>
+                <li><a href="" title="facebook"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="" title="twitter"><i class="fab fa-twitter"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="assets/js/all.js"></script>
 </body>
 </html>

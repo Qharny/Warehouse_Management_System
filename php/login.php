@@ -1,7 +1,12 @@
 <?php
-    require "connection.php";
+    session_start();
 
-    // session_start(); // Start the session
+    $host_name = "localhost";
+    $user_name = "root";
+    $password = "";
+    $db_name = "Warehouse_Management_System";
+
+    $connection = mysqli_connect($host_name, $user_name, $password, $db_name);
 
     // check if the login form has submitted
     if(isset($_POST['login'])){
